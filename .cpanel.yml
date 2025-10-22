@@ -1,0 +1,9 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home1/acsmon31/public_html/acs-landing-page/
+    - /bin/cp -R * $DEPLOYPATH
+    - /usr/local/bin/npm install
+    - /usr/local/bin/npm run build
+    - /bin/cp -R build/* $DEPLOYPATH
+    - /bin/rm -rf $DEPLOYPATH/build
